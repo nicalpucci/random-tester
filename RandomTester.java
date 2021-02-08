@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 /**
  * RandomTester class will teach me to use Random().
  * 
@@ -40,5 +41,52 @@ public class RandomTester
             i++;
             position++;
         }
+    }
+    
+    /**
+     * no recibe parámetros y que devuelva un número aleatorio 
+     * comprendido entre 1 y 6 (ambos inclusive), para simular 
+     * el lanzamiento de un dado.
+     */
+    public void lanzarDado() {
+        int num = 7;
+        int ran = azar.nextInt(num - 1) + 1;
+        System.out.println(ran);
+        
+    }
+    
+    /**
+     * no recibe parámetros y que devuelva aleatoriamente una 
+     * de las cadenas "si", "no" o "quizás".
+     */
+    public void getRespuesta(){
+        ArrayList <String> respuestas = new ArrayList <String>();
+        respuestas.add("si");
+        respuestas.add("no");
+        respuestas.add("quizá");
+        System.out.println(respuestas.get(azar.nextInt(3)));
+    }
+    
+    /**
+     * admite un parámetro max y genere un numero aleatorio 
+     * comprendido en el rango entre 1 y max (inclusive).
+     * 
+     * @max
+     */
+    public void getNumeroEntre1Y (int max) {
+        int ran = azar.nextInt(max) + 1;
+        System.out.println(ran);
+    }
+    
+    /**
+     * admita un parámetro max y genere un numero aleatorio 
+     * comprendido en el rango entre 1 y max (inclusive).
+     * 
+     * @max
+     * @min
+     */
+    public void getNumeroEntre (int min, int max) {
+        int ran = azar.nextInt(max + 1 - min) + min;
+        System.out.println(ran);
     }
 }
